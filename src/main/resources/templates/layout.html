@@ -31,7 +31,7 @@
                     <a style="color: #D91A5F" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
                 </div>
 
-                <div sec:authorize="isAuthenticated()" style="margin-top:10; background:#FEBF10; color:#D91A5F; padding: 5px">
+                <div sec:authorize="isAuthenticated()" style="background:#FEBF10; color:#D91A5F; padding: 5px">
                     <a class="home" href="index.html" th:href="@{/}"><b>Home</b></a>
                     <a class="posts" href="posts/index.html" th:href="@{/posts}"><b>Posts</b></a>
                     <a class="create-post" href="posts/create.html" th:href="@{/posts/create}"><b>Create Post</b></a>
