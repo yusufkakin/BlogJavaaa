@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title id="pageTitle">Register</title>
+</head>
+
+<body>
+<header th:replace="layout::site-header"/>
+<div class="container">
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <h1>Register to Blog</h1>
+            <form class="form-signin" method="post" th:action="@{/users/register}" th:object="${blogUser}">
+                <div><label class="sr-only" for="fullName">Full Name:</label></div>
+                <input class="form-control" placeholder="Full Name" id="fullName" name="fullName" th:value="*{fullName}" type="text"/>
+                <span class="formError" th:errors="*{fullName}"
+                      th:if="${#fields.hasErrors('fullName')}">Invalid Full Name</span>
+               <br>
+                <div><label class="sr-only" for="username">Username:</label></div>
+                <input class="form-control" placeholder="Username" id="username" name="username" th:value="*{username}" type="text"/>
+                <span class="formError" th:errors="*{username}"
+                      th:if="${#fields.hasErrors('username')}">Invalid username</span>
+                <br>
+                <div><label class="sr-only" for="password" th:value="*{password}">Password:</label></div>
+                <input class="form-control" placeholder="Password" id="password" name="password" th:value="*{password}" type="password"/>
+                <span class="formError" th:errors="*{password}"
+                      th:if="${#fields.hasErrors('password')}">Invalid password</span>
+                <br>
+                <div><label class="sr-only" for="matchingPassword" th:value="*{matchingPassword}">Confirm
+                    Password:</label></div>
+                <input class="form-control" placeholder="Confirm password" id="matchingPassword" name="matchingPassword" th:value="*{matchingPassword}"
+                       type="password"/>
+                <span class="formError" th:errors="*{matchingPassword}"
+                      th:if="${#fields.hasErrors('matchingPassword')}">Invalid password</span>
+                <br>
+                <div>
+                    <input style="background: #FEBF10; border-color: #FEBF10" class="btn btn-lg btn-primary btn-block" type="submit" value="Register"/>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<footer th:replace="layout::site-footer"/>
+</body>
+</html>

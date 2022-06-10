@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+    <title th:include=":: #pageTitle">Layout Generic Title </title>
+    <link href="../public/css/styles.css" rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link href="../public/img/favicon.ico" rel="icon" th:href="@{/img/favicon.ico}"/>
+    <script src="../public/js/jquery-3.1.0.min.js" th:src="@{/js/jquery-3.1.0.min.js}"></script>
+    <script src="../public/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>
+
+</head>
+<body>
+<div class="container">
+    <header th:fragment="site-header">
+        <header>
+            <div class="row">
+                <a href="index.html" th:href="@{/}"><img src="../public/img/CFHlogo.png" width="200px"
+                                                         th:src="@{/img/CFHlogo.png}"></a>
+
+                <div sec:authorize="isAnonymous()" style="margin-top:10px; background: #FEBF10; color: #D91A5F">
+                    <a style="color: #D91A5F" href="posts/index.html" th:href="@{/showMyLoginPage}"><b>Login</b></a>
+                    <a style="color: #D91A5F" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
+                </div>
+
+                <div sec:authorize="isAuthenticated()" style="margin-top:10; background:#FEBF10; color:#D91A5F; padding: 5px">
+                    <a class="home" href="index.html" th:href="@{/}"><b>Home</b></a>
+                    <a class="posts" href="posts/index.html" th:href="@{/posts}"><b>Posts</b></a>
+                    <a class="create-post" href="posts/create.html" th:href="@{/posts/create}"><b>Create Post</b></a>
+                    <a class="users" href="users/index.html" th:href="@{/users}"><b>Users</b></a>
+                    <a class="user-posts" href="posts/userPostIndex.html" th:href="@{/users/post}"><b>User Post(s)</b></a>
+
+                    <div class="row" id="logged-in-info">
+                        <span style="margin-top: 30px"><b>Hello, </b></span>
+                        <div sec:authentication="name" style="margin-right: 12px; margin-top: 30px">Hello,</div>
+                        <form method="post" th:action="@{/logout}">
+                            <input style="margin-top: 30px;margin-left: 10px; background: #3A1027; border: #3A1027" class="btn btn-primary" type="submit" value="Logout">
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </header>
+
+        <ul id="messages" th:with="notifyMessages=${session[T(com.hustlers.springboot.
+                    blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+            <li th:class="${#strings.toLowerCase(msg.type)}" th:each="msg:${notifyMessages}"
+                th:text="${msg.text}">
+            </li>
+            <span th:if="${notifyMessages}" th:remove="all" th:text="${#session.removeAttribute(
+            T(com.hustlers.springboot.blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
+
+            </span>
+
+        </ul>
+    </header>
+</div>
+</body>
+</html>

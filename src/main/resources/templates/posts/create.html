@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title id="pageTitle">Save Post</title>
+</head>
+<body>
+<header th:replace="layout::site-header"/>
+<div class="container">
+    <h3 style="color: #3A1027; border-color: #FEBF10">Posts</h3><hr>
+
+    <p class="h4 mb-4;color: #3A1027; border-color: #FEBF10">Save Post</p>
+    <form action="#" method="post"
+          th:action="@{/posts/save}" th:object="${post}">
+
+        <input th:field="*{id}" type="hidden" />
+
+        <input class="form-control mb-4 col-4" placeholder="Title"
+               th:field="*{title}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Content"
+               th:field="*{body}" type="text">
+
+        <button class="savebtn" type="submit">Submit</button>
+
+
+    </form>
+
+    <hr>
+    <a style="color: dodgerblue" th:href="@{/posts}">back to All Posts</a>
+</div>
+<footer style="margin-top: 80px" th:replace="layout::site-footer"/>
+</body>
+</html>

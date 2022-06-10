@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title id="pageTitle">Change Right</title>
+</head>
+<body>
+<header th:replace="layout::site-header"/>
+<div class="container">
+    <h3>Post directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Change Right</p>
+    <form action="#" method="post"
+          th:action="@{/Admin/confirmChange}" th:object="${user}">
+
+        <input th:field="*{id}" type="hidden"/>
+
+        <input class="form-control mb-4 col-4" placeholder="username"
+               th:field="*{username}" type="text">
+
+        <input class="form-control mb-4 col-4" placeholder="Content"
+               th:field="*{fullName}" type="text">
+
+        <div class="dropdown">
+            <select name="chosen">
+                <option value="0"> select Authority</option>
+                <option th:each="authority : ${authorityList}" th:text="${authority}" th:value="${authority}"></option>
+            </select>
+        </div>
+
+        <br>
+
+        <button class="btn btn-info col-2" type="submit">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/posts}">back to All Posts</a>
+</div>
+<footer th:replace="layout::site-footer"/>
+</body>
+</html>
