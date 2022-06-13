@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: site-head">
     <title id="pageTitle">Hustlers Blog</title>
 </head>
@@ -12,6 +13,12 @@
             Work Begins on HTML 5.1
         </a>
     </aside>
+
+    <div sec:authorize="isAnonymous()" class="d-flex justify-content-center">
+            Welcome to the CFH blog site! Click the "Login" or "Register" in the top left to get started
+        </p>
+    </div>
+
 
     <main id="posts">
         <article th:each="p: ${latest3Posts}">
