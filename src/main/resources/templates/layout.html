@@ -26,12 +26,12 @@
                 <a href="index.html" th:href="@{/}"><img src="../public/img/CFHlogo.png" width="200px"
                                                          th:src="@{/img/CFHlogo.png}"></a>
 
-                <div sec:authorize="isAnonymous()" style="margin-top:10px; background: #FEBF10; color: #D91A5F">
+                <div sec:authorize="isAnonymous()" style="margin-top:10px; opacity:1;">
                     <a style="color: #D91A5F" href="posts/index.html" th:href="@{/showMyLoginPage}"><b>Login</b></a>
                     <a style="color: #D91A5F" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
                 </div>
 
-                <div sec:authorize="isAuthenticated()" style="background:#FEBF10; color:#D91A5F; padding: 5px">
+                <div sec:authorize="isAuthenticated()" style="opacity:1; padding: 5px">
                     <a class="home" href="index.html" th:href="@{/}"><b>Home</b></a>
                     <a class="posts" href="posts/index.html" th:href="@{/posts}"><b>Posts</b></a>
                     <a class="create-post" href="posts/create.html" th:href="@{/posts/create}"><b>Create Post</b></a>

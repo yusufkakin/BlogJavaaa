@@ -1,6 +1,9 @@
+
+
 body>header {
-    background: #eee;
+    background: #a01346;
     padding: 5px;
+    background-image: linear-gradient(to right, #FEBF10 , #D91A5F);
 }
 
 body>header>a>img, body>header a {
@@ -8,6 +11,7 @@ body>header>a>img, body>header a {
     vertical-align: middle;
     padding-right: 20px;
     font-size: 1.2em;
+    opacity: 1;
 
 }
 
@@ -23,19 +27,23 @@ body>footer {
 #logged-in-info {
     float: right;
     margin-left: 570px;
+
 }
 
 #logged-in-info form {
     display: inline-block;
     margin-right: 10px;
+
 }
 body>aside {
     float: right;
     width: 200px;
-    background: #CCC;
+    background: #FEBF10;
     padding: 15px;
     margin-left: 20px;
     margin-top: 10px;
+    color:#3A1027;
+
 }
 
 body>aside h2 {
@@ -80,6 +88,7 @@ ul#messages li.error {
 .home{
     color:#D91A5F;
     margin-top: 30px;
+
 
 }
 
