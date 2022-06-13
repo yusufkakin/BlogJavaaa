@@ -13,6 +13,8 @@
     <form action="#" method="post"
           th:action="@{/Admin/confirmChange}" th:object="${user}">
 
+        <!-- Add hidden form field to handle update: binds to the model attribute, Tells app which employee to update-->
+        <!--Not needed here-->
         <input th:field="*{id}" type="hidden"/>
 
         <input class="form-control mb-4 col-4" placeholder="username"
@@ -37,5 +39,6 @@
     <hr>
     <a th:href="@{/posts}">back to All Posts</a>
 </div>
+<footer th:replace="layout::site-footer"/>
 </body>
 </html>

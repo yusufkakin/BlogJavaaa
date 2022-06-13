@@ -3,12 +3,15 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="site-head">
 
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta content="width=device-width" name="viewport">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 
-    <title th:include=":: #pageTitle">Hustlers Blog </title>
+    <title th:include=":: #pageTitle">Layout Generic Title </title>
     <link href="../public/css/styles.css" rel="stylesheet" th:href="@{/css/styles.css}"/>
     <link href="../public/img/favicon.ico" rel="icon" th:href="@{/img/favicon.ico}"/>
     <script src="../public/js/jquery-3.1.0.min.js" th:src="@{/js/jquery-3.1.0.min.js}"></script>
@@ -20,69 +23,54 @@
     <header th:fragment="site-header">
         <header>
             <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-                    <a class="navbar-brand" href="index.html" th:href="@{/}"><img src="../public/img/CFHlogo.png" width="200px" th:src="@{/img/CFHlogo.png}"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" sec:authorize="isAnonymous()">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html" th:href="@{/}" >Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/showMyLoginPage}">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/users/register}">Register</a>
-                            </li>
-                        </ul>
+                <a href="index.html" th:href="@{/}"><img class="logo" src="../public/img/CFHlogo.png" width="200px"
+                                                         th:src="@{/img/CFHlogo.png}"></a>
+
+                <div sec:authorize="isAnonymous()" style="margin-top:2px; background: #FEBF10; color: #D91A5F; padding-right: 1125px">
+                    <a style="color: #D91A5F; padding-left: 30px; margin-top: 30px" href="posts/index.html" th:href="@{/showMyLoginPage}"><b>Login</b></a>
+                    <a style="color: #D91A5F; padding-left: 30px; margin-top: 30px" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
+                </div>
+
+                <div sec:authorize="isAuthenticated()" style="background:#FEBF10; color:#D91A5F">
+                    <a class="home" href="index.html" th:href="@{/}"><b>Home</b></a>
+                    <a class="posts" href="posts/index.html" th:href="@{/posts}"><b>Posts</b></a>
+                    <a class="create-post" href="posts/create.html" th:href="@{/posts/create}"><b>Create Post</b></a>
+                    <a class="users" href="users/index.html" th:href="@{/users}"><b>Users</b></a>
+                    <a class="user-posts" href="posts/userPostIndex.html" th:href="@{/users/post}"><b>User Post(s)</b></a>
+
+                    <div class="row" id="logged-in-info">
+                        <span style="margin-top: 30px"><b>Hello, </b></span>
+                        <div sec:authentication="name" style="margin-right: 12px; margin-top: 30px">Hello,</div>
+                        <form method="post" th:action="@{/logout}">
+                            <input style="margin-top: 30px;margin-left: 10px; background: #3A1027; border: #3A1027" class="btn btn-primary" type="submit" value="Logout">
+                        </form>
                     </div>
-                    <div class="collapse navbar-collapse" id="navbarNav" sec:authorize="isAuthenticated()">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html" th:href="@{/}" >Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/posts}">Posts</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/posts/create}">Create Post</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/users}">Users</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="posts/index.html" th:href="@{/users/post}">User Posts</a>
-                            </li>
-                            <li class="nav-item" id="logged-in-info">
-                                <a class="nav-link mr-3"  sec:authentication="name"></a>
-                            </li>
-                            <li class="nav-item">
-                                <form method="post" th:action="@{/logout}">
-                                    <input style="background: #3A1027; border: #3A1027" class="btn btn-primary" type="submit" value="Logout">
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                </div>
+
+
             </div>
 
         </header>
 
-        <ul id="messages" th:with="notifyMessages=${session[T(com.hustlers.springboot.
-                    blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+        <ul id="messages" th:with="notifyMessages=${session[T(com.zikozee.springboot.
+                    mvcblog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
             <li th:class="${#strings.toLowerCase(msg.type)}" th:each="msg:${notifyMessages}"
                 th:text="${msg.text}">
             </li>
             <span th:if="${notifyMessages}" th:remove="all" th:text="${#session.removeAttribute(
-            T(com.hustlers.springboot.blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
+            T(com.zikozee.springboot.mvcblog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
+
             </span>
 
         </ul>
     </header>
+    <h1>Welcome</h1>
+    <p>Welcome to the Carolina Fintech Hub Blog</p>
+    <footer th:fragment="site-footer">
+        &COPY;Carolina Fintech Hub Blog System, 2022
+    </footer>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -6,12 +6,14 @@
 <body>
 <header th:replace="layout::site-header"/>
 <div class="container">
-    <h3 style="color: #3A1027; border-color: #FEBF10">Posts</h3><hr>
+    <h3 style="color: #3A1027; border-color: #FEBF10">Post directory</h3><hr>
 
     <p class="h4 mb-4;color: #3A1027; border-color: #FEBF10">Save Post</p>
     <form action="#" method="post"
           th:action="@{/posts/save}" th:object="${post}">
 
+        <!-- Add hidden form field to handle update: binds to the model attribute, Tells app which employee to update-->
+        <!--Not needed here-->
         <input th:field="*{id}" type="hidden" />
 
         <input class="form-control mb-4 col-4" placeholder="Title"
@@ -20,13 +22,14 @@
         <input class="form-control mb-4 col-4" placeholder="Content"
                th:field="*{body}" type="text">
 
-        <button class="savebtn" type="submit">Submit</button>
-
+        <button class="savebtn" type="submit">Save</button>
+        <!-- added new class savebtn -->
 
     </form>
 
     <hr>
     <a style="color: dodgerblue" th:href="@{/posts}">back to All Posts</a>
 </div>
+<footer style="margin-top: 80px" th:replace="layout::site-footer"/>
 </body>
 </html>
