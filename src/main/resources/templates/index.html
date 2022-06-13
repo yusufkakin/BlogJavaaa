@@ -9,7 +9,7 @@
     <div class="p-5 mb-5" style="background-color: #3A1027;"></div>
     <div class="d-flex justify-content-around">
 <span class = "d-flex justify-content-around"></span>
-        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae dui et libero volutpat iaculis vel quis arcu. Proin condimentum facilisis hendrerit. Nam convallis elit purus, quis vulputate odio finibus id. Cras sit amet turpis ante. Cras egestas vitae neque eget tincidunt. Proin dignissim leo id lorem auctor semper vel congue dui. Maecenas viverra lacinia bibendum. Nam et convallis ipsum. Duis id nulla in libero accumsan sagittis vitae vel massa. In hac habitasse platea dictumst. Donec convallis lacus id libero sodales, vel mollis nibh imperdiet. Nam consequat sem a blandit mattis. Praesent congue scelerisque feugiat. Fusce sed eros non sem varius posuere et vel felis. Proin suscipit leo magna, ut condimentum odio tempus vitae. Aenean mi tellus, faucibus ut dignissim eu, fringilla aliquet orci.</h4></span>
+        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae dui et libero volutpat iaculis vel quis arcu. Proin condimentum facilisis hendrerit. Nam convallis elit purus, quis vulputate odio finibus id. Cras sit amet turpis ante. Cras egestas vitae neque eget tincidunt. Proin dignissim leo id lorem auctor semper vel congue dui. Maecenas viverra lacinia bibendum. Nam et convallis ipsum. Duis id nulla in libero accumsan sagittis vitae vel massa.</h4></span>
         <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px ; height: 200px">
             <h3 style="color: #3A1027">Recent Posts</h3>
             <a th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
@@ -18,7 +18,7 @@
     <div class="d-flex justify-content-around flex-row pt-5 w-75">
         <div class="d-flex justify-content-around flex-row w-25"></div>
         <div class="d-flex justify-content-around flex-column">
-            <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}">
+            <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}" style="width: 700px">
             <h2 class="title p-2" th:text="${p.title}" style="color: #3A1027"> Post Title</h2>
             <div class="date pl-2">
                 <i>Posted on</i>
