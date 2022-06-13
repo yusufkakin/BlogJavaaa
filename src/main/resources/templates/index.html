@@ -2,34 +2,48 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head th:replace="layout :: site-head">
     <title id="pageTitle">Hustlers Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-
     <header th:replace="layout::site-header"/>
-   <aside>
-        <h2>Recent Posts</h2>
-        <a href="#" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
-            Work Begins on HTML 5.1
-        </a>
-    </aside>
-
-    <main id="posts">
-        <article th:each="p: ${latest3Posts}">
-            <h2 class="title" th:text="${p.title}"> Post Title</h2>
-            <div class="date">
+    <div class="p-5 mb-5" style="background-color: #3A1027;"></div>
+    <div class="d-flex justify-content-around">
+<span class = "d-flex justify-content-around"></span>
+        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae dui et libero volutpat iaculis vel quis arcu. Proin condimentum facilisis hendrerit. Nam convallis elit purus, quis vulputate odio finibus id. Cras sit amet turpis ante. Cras egestas vitae neque eget tincidunt. Proin dignissim leo id lorem auctor semper vel congue dui. Maecenas viverra lacinia bibendum. Nam et convallis ipsum. Duis id nulla in libero accumsan sagittis vitae vel massa. In hac habitasse platea dictumst. Donec convallis lacus id libero sodales, vel mollis nibh imperdiet. Nam consequat sem a blandit mattis. Praesent congue scelerisque feugiat. Fusce sed eros non sem varius posuere et vel felis. Proin suscipit leo magna, ut condimentum odio tempus vitae. Aenean mi tellus, faucibus ut dignissim eu, fringilla aliquet orci.</h4></span>
+        <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px ; height: 200px">
+            <h3 style="color: #3A1027">Recent Posts</h3>
+            <a th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
+        </a></span>
+    </div>
+    <div class="d-flex justify-content-around flex-row pt-5">
+        <div class="d-flex justify-content-around flex-row w-25"></div>
+        <div class="d-flex justify-content-around flex-column">
+            <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}">
+            <h2 class="title p-2" th:text="${p.title}" style="color: #3A1027"> Post Title</h2>
+            <div class="date pl-2">
                 <i>Posted on</i>
-                <span th:text="${#dates.format(p.date, 'dd-MMM-yyy')}">19-August-2019</span>
-                <span th:if="${p.author}" th:remove="tag">
+                <span th:text="${#dates.format(p.date, 'MMM-dd-yyy')}" style="color: #3A1027"></span>
+                <span th:if="${p.author}" th:remove="tag" style="color: #3A1027">
                 <i>by</i>
                 <span th:text="${(p.author.fullName) != null?
-                            p.author.fullName : p.author.username}"></span>
+                            p.author.fullName : p.author.username}" style="color: #3A1027"></span>
                 </span>
+
             </div>
-            <p class="content" th:utext="${p.body}">Post Content</p>
-        </article>
-    </main>
+            <p class="content p-2" th:utext="${p.body}">Post Content</p>
+                <hr>
+        </div>
 
+        </div>
+        <div class="d-flex justify-content-around flex-row w-25"></div></div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
+<footer class="bg-light text-light text-center text-lg-start">
+    <div class="text-center p-4 mt-3" style="background-color: #3A1027">
+        © 2022 Hustlers Blog:
+        <a class = "text-light" href="https://blogctac.heroku.com">CFH</a>
+    </div>
+
+</footer>
 </html>
