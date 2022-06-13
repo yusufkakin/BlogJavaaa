@@ -1,25 +1,24 @@
-body>header {
-    background: #eee;
-    padding: 5px;
-}
+/*body>header {*/
+/*    background: #eee;*/
+/*    padding: 5px;*/
+/*}*/
 
-body>header>a>img, body>header a {
-    display: inline-block;
-    vertical-align: middle;
-    /*padding-top: 15px;*/
-    font-size: 1.2em;
+/*body>header>a>img, body>header a {*/
+/*    display: inline-block;*/
+/*    vertical-align: middle;*/
+/*    padding-right: 20px;*/
+/*    font-size: 1.2em;*/
 
+/*}*/
 
-}
-
-body>footer {
-    background: #eee;
-    padding: 5px;
-    margin: 10px 0;
-    text-align: center;
-    margin-top: 50px;
-    color: #F47A37;
-}
+/*body>footer {*/
+/*    background: #eee;*/
+/*    padding: 5px;*/
+/*    margin: 10px 0;*/
+/*    text-align: center;*/
+/*    margin-top: 50px;*/
+/*    color: #F47A37;*/
+/*}*/
 
 #logged-in-info {
     float: right;
@@ -30,145 +29,89 @@ body>footer {
     display: inline-block;
     margin-right: 10px;
 }
-body>aside {
-    float: right;
-    width: 200px;
-    background: #CCC;
-    padding: 15px;
-    margin-left: 20px;
-    margin-top: 10px;
-}
+/*body>aside {*/
+/*    float: right;*/
+/*    width: 200px;*/
+/*    background: #CCC;*/
+/*    padding: 15px;*/
+/*    margin-left: 20px;*/
+/*    margin-top: 10px;*/
+/*}*/
 
-body>aside h2 {
-    margin: 5px 0px 15px 0px;
-}
+/*body>aside h2 {*/
+/*    margin: 5px 0px 15px 0px;*/
+/*}*/
 
-body>aside a {
-    display: block;
-    margin: 5px 0px;
-    text-decoration: none;
-}
+/*body>aside a {*/
+/*    display: block;*/
+/*    margin: 5px 0px;*/
+/*    text-decoration: none;*/
+/*}*/
 
-body>main:after {
-    content: '';
-    display: block;
-    clear: both;
-}
+/*body>main:after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    clear: both;*/
+/*}*/
 
-ul#messages li {
-    display: block;
-    width: 80%;
-    margin: 5px auto;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-}
+/*ul#messages li {*/
+/*    display: block;*/
+/*    width: 80%;*/
+/*    margin: 5px auto;*/
+/*    text-align: center;*/
+/*    padding: 5px;*/
+/*    border-radius: 5px;*/
+/*}*/
 
-ul#messages li.info {
-    background: #7f7;
-}
+/*ul#messages li.info {*/
+/*    background: #7f7;*/
+/*}*/
 
-ul#messages li.error {
-    background: #d00;
-    color: white;
-}
+/*ul#messages li.error {*/
+/*    background: #d00;*/
+/*    color: white;*/
+/*}*/
 
-.formError {
-    color: red;
-    font-style: italic;
-}
+/*.formError {*/
+/*    color: red;*/
+/*    font-style: italic;*/
+/*}*/
 
-.home{
-    color:#D91A5F;
-    margin-top: 30px;
-    padding-left: 20px;
+/*.home{*/
+/*    color:#D91A5F;*/
+/*    margin-top: 30px;*/
 
-}
+/*}*/
 
-.savebtn{ /* added new class savebtn in html */
-    background:#FEBF10;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-color: #FEBF10;
-}
-.posts{
-    color:#D91A5F;
-    margin-top: 30px;
-    padding-left: 20px;
-}
+/*.savebtn{ !* added new class savebtn in html *!*/
+/*    background:#FEBF10;*/
+/*    padding-left: 10px;*/
+/*    padding-right: 10px;*/
+/*    border-color: #FEBF10;*/
+/*}*/
+/*.posts{*/
+/*    color:#D91A5F;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.create-post{
-    color:#D91A5F;
-    margin-top: 30px;
-    padding-left: 20px;
-}
+/*.create-post{*/
+/*    color:#D91A5F;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.users{
-    color:#D91A5F;
-    margin-top: 30px;
-    padding-left: 20px;
-}
+/*.users{*/
+/*    color:#D91A5F;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.user-posts{
-    color:#D91A5F;
-    margin-top: 30px;
-    padding-left: 20px;
-}
+/*.user-posts{*/
+/*    color:#D91A5F;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.btn btn-info btn-sm{
-    background: #FEBF10;
-    color: #3A1027;
-    border-color:#FEBF10;
-}
-
-.recentPost{
-    background: #3A1027;
-}
-
-.recentPostHeading{
-    color: white;
-    text-align: center;
-
-}
-
-
-
-
-    @keyframes spin {
-        from{transform: rotate(0deg);}
-        to{transform: rotate(360deg);}
-    }
-    .logo{
-        animation: spin 2s;
-    }
-
-
-
-
-
-
-    /*img{*/
-    /*    animation-name: logo;*/
-    /*    animation-duration: 5s;*/
-    /*    animation-timing-function: linear;*/
-    /*    animation-iteration-count: 1;*/
-    /*    animation-direction: alternate;*/
-    /*}*/
-
-    /*@keyframes logo {*/
-    /*    0%{*/
-    /*        font-size: 5px;*/
-    /*    }*/
-    /*    100%{*/
-    /*        font-size: 50%;*/
-    /*    }*/
-
-    /*}*/
-
-
-
-
-
-
-
+/*.btn btn-info btn-sm{*/
+/*    background: #FEBF10;*/
+/*    color: #3A1027;*/
+/*    border-color:#FEBF10;*/
+/*}*/
 
