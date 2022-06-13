@@ -13,7 +13,7 @@
 
     <title th:include=":: #pageTitle">Layout Generic Title </title>
     <link href="../public/css/styles.css" rel="stylesheet" th:href="@{/css/styles.css}"/>
-    <link href="../public/img/favico.ico" rel="icon" th:href="@{/img/favico.ico}"/>
+    <link href="../public/img/favicon.ico" rel="icon" th:href="@{/img/favicon.ico}"/>
     <script src="../public/js/jquery-3.1.0.min.js" th:src="@{/js/jquery-3.1.0.min.js}"></script>
     <script src="../public/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>
 
@@ -23,15 +23,15 @@
     <header th:fragment="site-header">
         <header>
             <div class="row">
-                <a href="index.html" th:href="@{/}"><img src="../public/img/CFHlogo.png" width="200px"
+                <a href="index.html" th:href="@{/}"><img class="logo" src="../public/img/CFHlogo.png" width="200px"
                                                          th:src="@{/img/CFHlogo.png}"></a>
 
-                <div sec:authorize="isAnonymous()" style="margin-top:10px; opacity:1;">
-                    <a style="color: #D91A5F" href="posts/index.html" th:href="@{/showMyLoginPage}"><b>Login</b></a>
-                    <a style="color: #D91A5F" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
+                <div sec:authorize="isAnonymous()" style="margin-top:2px; background: #FEBF10; color: #D91A5F; padding-right: 1125px">
+                    <a style="color: #D91A5F; padding-left: 30px; margin-top: 30px" href="posts/index.html" th:href="@{/showMyLoginPage}"><b>Login</b></a>
+                    <a style="color: #D91A5F; padding-left: 30px; margin-top: 30px" href="posts/index.html" th:href="@{/users/register}"><b>Register</b></a>
                 </div>
 
-                <div sec:authorize="isAuthenticated()" style="opacity:1; padding: 5px">
+                <div sec:authorize="isAuthenticated()" style="background:#FEBF10; color:#D91A5F">
                     <a class="home" href="index.html" th:href="@{/}"><b>Home</b></a>
                     <a class="posts" href="posts/index.html" th:href="@{/posts}"><b>Posts</b></a>
                     <a class="create-post" href="posts/create.html" th:href="@{/posts/create}"><b>Create Post</b></a>
@@ -52,18 +52,25 @@
 
         </header>
 
-        <ul id="messages" th:with="notifyMessages=${session[T(com.hustlers.springboot.
-                    blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+        <ul id="messages" th:with="notifyMessages=${session[T(com.zikozee.springboot.
+                    mvcblog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
             <li th:class="${#strings.toLowerCase(msg.type)}" th:each="msg:${notifyMessages}"
                 th:text="${msg.text}">
             </li>
             <span th:if="${notifyMessages}" th:remove="all" th:text="${#session.removeAttribute(
-            T(com.hustlers.springboot.blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
+            T(com.zikozee.springboot.mvcblog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
 
             </span>
 
         </ul>
     </header>
+    <h1>Welcome</h1>
+    <p>Welcome to the Carolina Fintech Hub Blog</p>
+    <footer th:fragment="site-footer">
+        &COPY;Carolina Fintech Hub Blog System, 2022
+    </footer>
 </div>
+
+
 </body>
 </html>

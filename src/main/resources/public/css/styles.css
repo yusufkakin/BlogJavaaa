@@ -1,17 +1,14 @@
-
-
 body>header {
-    background: #a01346;
+    background: #eee;
     padding: 5px;
-    background-image: linear-gradient(to right, #FEBF10 , #D91A5F);
 }
 
 body>header>a>img, body>header a {
     display: inline-block;
     vertical-align: middle;
-    padding-right: 20px;
+    /*padding-top: 15px;*/
     font-size: 1.2em;
-    opacity: 1;
+
 
 }
 
@@ -27,23 +24,19 @@ body>footer {
 #logged-in-info {
     float: right;
     margin-left: 570px;
-
 }
 
 #logged-in-info form {
     display: inline-block;
     margin-right: 10px;
-
 }
 body>aside {
     float: right;
     width: 200px;
-    background: #FEBF10;
+    background: #CCC;
     padding: 15px;
     margin-left: 20px;
     margin-top: 10px;
-    color:#3A1027;
-
 }
 
 body>aside h2 {
@@ -88,7 +81,7 @@ ul#messages li.error {
 .home{
     color:#D91A5F;
     margin-top: 30px;
-
+    padding-left: 20px;
 
 }
 
@@ -101,21 +94,25 @@ ul#messages li.error {
 .posts{
     color:#D91A5F;
     margin-top: 30px;
+    padding-left: 20px;
 }
 
 .create-post{
     color:#D91A5F;
     margin-top: 30px;
+    padding-left: 20px;
 }
 
 .users{
     color:#D91A5F;
     margin-top: 30px;
+    padding-left: 20px;
 }
 
 .user-posts{
     color:#D91A5F;
     margin-top: 30px;
+    padding-left: 20px;
 }
 
 .btn btn-info btn-sm{
@@ -123,4 +120,55 @@ ul#messages li.error {
     color: #3A1027;
     border-color:#FEBF10;
 }
+
+.recentPost{
+    background: #3A1027;
+}
+
+.recentPostHeading{
+    color: white;
+    text-align: center;
+
+}
+
+
+
+
+    @keyframes spin {
+        from{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+    }
+    .logo{
+        animation: spin 2s;
+    }
+
+
+
+
+
+
+    /*img{*/
+    /*    animation-name: logo;*/
+    /*    animation-duration: 5s;*/
+    /*    animation-timing-function: linear;*/
+    /*    animation-iteration-count: 1;*/
+    /*    animation-direction: alternate;*/
+    /*}*/
+
+    /*@keyframes logo {*/
+    /*    0%{*/
+    /*        font-size: 5px;*/
+    /*    }*/
+    /*    100%{*/
+    /*        font-size: 50%;*/
+    /*    }*/
+
+    /*}*/
+
+
+
+
+
+
+
 

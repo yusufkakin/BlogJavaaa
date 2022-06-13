@@ -2,14 +2,17 @@
 <html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: site-head">
-    <title id="pageTitle">Hustlers Blog</title>
+    <title id="pageTitle">Welcome to Spring MVC Blog</title>
 </head>
+<!--<head th:replace="layout :: site-head">
+    <title th:text="${post.title}">View Post</title>
+</head>-->
 <body>
 
     <header th:replace="layout::site-header"/>
-   <aside>
-        <h2>Recent Posts</h2>
-        <a href="#" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
+   <aside class="recentPost">
+        <h3 class="recentPostHeading">Recent Posts</h3>
+        <a style="text-align: center; color: #FEBF10" href="#" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
             Work Begins on HTML 5.1
         </a>
     </aside>
@@ -21,8 +24,8 @@
 
 
     <main id="posts">
-        <article th:each="p: ${latest3Posts}">
-            <h2 class="title" th:text="${p.title}"> Post Title</h2>
+        <article style="margin-left: 40px" th:each="p: ${latest3Posts}">
+            <h2 style="color: #F47A37" class="title" th:text="${p.title}"> Post Title</h2>
             <div class="date">
                 <i>Posted on</i>
                 <span th:text="${#dates.format(p.date, 'dd-MMM-yyy')}">19-August-2019</span>
@@ -36,7 +39,7 @@
         </article>
     </main>
 
-
+    <footer th:replace="layout::site-footer"/>
 
 </body>
 </html>
