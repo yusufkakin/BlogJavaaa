@@ -15,7 +15,7 @@
             <a th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
         </a></span>
     </div>
-    <div class="d-flex justify-content-around flex-row pt-5">
+    <div class="d-flex justify-content-around flex-row pt-5 w-75">
         <div class="d-flex justify-content-around flex-row w-25"></div>
         <div class="d-flex justify-content-around flex-column">
             <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}">
