@@ -18,6 +18,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
 
+    //    Spring Security provides password encoding feature using the PasswordEncoder interface.
+//    It's a one way transformation, means you can only encode the password, but there is no way to decode
+//    the password back to the plaintext form
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     public SecurityConfig(@Qualifier("dataSource") DataSource dataSource) {
         this.dataSource = dataSource;
     }
@@ -47,9 +55,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
 }

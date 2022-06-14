@@ -27,6 +27,7 @@ public class PostsController {
         this.userService = userService;
     }
 
+    //    Can find post by ID
     @GetMapping("/posts/view/{id}")
     public String view(@PathVariable("id") Long id, Model model){
         Post post = postService.findById(id);
@@ -39,6 +40,7 @@ public class PostsController {
         return "posts/view";
     }
 
+    //    Will show all post once user clicks on "Posts" page.
     @GetMapping("/posts")
     public String listUserPosts(Model theModel){
         //get posts from database
@@ -50,6 +52,7 @@ public class PostsController {
         return "posts/index";
     }
 
+    //    Allows user to create a post once they are logged in. They will need to click on "Create Post"
     @GetMapping("/posts/create")
     public String createPost(Model theModel){
 
@@ -59,6 +62,7 @@ public class PostsController {
         return "posts/create";
     }
 
+    //    Allows the user to update the post that they have created
     @GetMapping("/posts/showFormForUpdate")
     public String showFormForUpdate(@RequestParam("postId") Long theId, Model theModel){
         Post post = postService.findById(theId);
@@ -66,17 +70,18 @@ public class PostsController {
         return "posts/create";
     }
 
+    //    Allows user to save the post they have created and updated.
     @PostMapping("/posts/save")
     public String savePost(@ModelAttribute("post") Post post){
         User user = userService.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
 
-        // takes care of author_id
         post.setAuthor(user);
         postService.create_edit(post);
         notifyService.addInfoMessage("Post created successfully");
         return "redirect:/posts";
     }
 
+    //    Allows the user to delete the post they have created.
     @GetMapping("/posts/delete")
     public String showFormForDelete(@RequestParam("postId") Long theId, RedirectAttributes redirectAttributes) {
 

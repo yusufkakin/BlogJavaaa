@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+// Marker interface used to identify a @Controller that should be used to render errors.
 @Controller
 public class ErrorHandler implements ErrorController {
 

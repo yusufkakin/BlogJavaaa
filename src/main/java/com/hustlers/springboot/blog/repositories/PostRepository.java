@@ -9,6 +9,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Set;
 
+// This shows the the last five post that have been created and is order by the date the post
+// were created in order.
+
 @Transactional
 public interface PostRepository extends JpaRepository<Post, Long> {
     @Query(value = "select p from Post p left join fetch p.author order by p.date desc ")

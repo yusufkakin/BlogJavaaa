@@ -19,6 +19,7 @@ public class HomeController {
         postService = thePostService;
     }
 
+    //    Shows the last 3 post that have been added when you click on the home page.
     @GetMapping("/")
     public String index(Model model){
         List<Post> homePosts = postService.homePosts(model);

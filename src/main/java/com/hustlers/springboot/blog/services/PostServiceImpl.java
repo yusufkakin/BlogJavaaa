@@ -78,6 +78,8 @@ public class PostServiceImpl implements PostService{
                 .collect(Collectors.toSet());
     }
 
+    //    This will allow the last five post to show on the home page
+
     @Override
     public List<Post> homePosts(Model model) {
         List<Post> lastest5Posts = findLatest5();

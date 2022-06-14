@@ -37,6 +37,7 @@ public class LoginRegisterController {
         return "users/login";
     }
 
+    //    Shows error messages if the login information is enter incorrectly
     @PostMapping("/users/login")
     public String LoginPage(@Valid LoginForm loginForm, BindingResult theBinBindingResult, Model model){
         if(theBinBindingResult.hasErrors()){
@@ -44,6 +45,7 @@ public class LoginRegisterController {
             return "users/login";
         }
 
+// Shows that you logged in with the correct info
         notifyService.addInfoMessage("Login successful");
         model.addAttribute("loginForm", loginForm);
         model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getName());
@@ -58,6 +60,8 @@ public class LoginRegisterController {
         return "users/register";
     }
 
+    //    This will let the new user know to fill out form correctly and if the username is already being used
+//    or not.
     @PostMapping("/users/register")
     public String RegistrationPage(@Valid BlogUser blogUser,
                                    BindingResult theBinBindingResult, Model model){
@@ -79,6 +83,7 @@ public class LoginRegisterController {
 
     }
 
+    //    This will allow the user to log out of his account
     @GetMapping("/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {//can refactor to be in userService
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

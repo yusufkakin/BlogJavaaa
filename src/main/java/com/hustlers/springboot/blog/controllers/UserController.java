@@ -36,6 +36,7 @@ public class UserController {
         return "users/index";
     }
 
+    //    This shows on the "User's Post" page if the user has not made a post yet after making an account.
     @GetMapping("/users/post")
     public String listUserPost(Model theModel) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

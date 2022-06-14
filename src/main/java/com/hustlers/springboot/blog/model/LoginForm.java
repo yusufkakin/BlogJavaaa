@@ -20,6 +20,7 @@ public class LoginForm {
         this.password = password;
     }
 
+    //   This tells the user that their username must be greater than 2 letters.
     @Size(min = 2, max = 30, message = "Username size should be in range [2...30]")
     private String username;
 

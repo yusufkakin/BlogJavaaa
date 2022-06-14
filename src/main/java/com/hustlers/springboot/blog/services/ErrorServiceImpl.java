@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
+
+//   Shows the error code if user doesnt fill out information correctly
 @Service
 public class ErrorServiceImpl implements ErrorService {
 

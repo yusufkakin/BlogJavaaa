@@ -14,8 +14,7 @@ public class NotificationServiceImpl implements NotificationService {
 
     public static final String NOTIFY_MSG_SESSION_KEY = "siteNotificationMessages";
 
-    //special place where you can store objects (key : value) and they persist for a long time.
-    //even survives redirection
+
     private HttpSession httpSession;
 
     @Autowired
