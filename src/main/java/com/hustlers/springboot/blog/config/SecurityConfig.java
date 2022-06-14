@@ -29,6 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(@Qualifier("dataSource") DataSource dataSource) {
         this.dataSource = dataSource;
     }
+    
+    //    This will encode the password once the user makes the account.
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
@@ -38,6 +40,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         + "from authorities where username=?")
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
+    
+    //  Ensures that any request to our application requires the user to be authenticated
+//  Allows users to authenticate with form based login
+//  Allows users to authenticate with HTTP Basic authentication
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
