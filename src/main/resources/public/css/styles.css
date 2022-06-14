@@ -83,12 +83,12 @@ ul#messages li.error {
 
 /*}*/
 
-/*.savebtn{ !* added new class savebtn in html *!*/
-/*    background:#FEBF10;*/
-/*    padding-left: 10px;*/
-/*    padding-right: 10px;*/
-/*    border-color: #FEBF10;*/
-/*}*/
+.savebtn{ /* added new class savebtn in html */
+    background:#FEBF10;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-color: #FEBF10;
+}
 /*.posts{*/
 /*    color:#D91A5F;*/
 /*    margin-top: 30px;*/
