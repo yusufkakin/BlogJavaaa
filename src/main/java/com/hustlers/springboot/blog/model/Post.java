@@ -3,6 +3,7 @@ package com.hustlers.springboot.blog.model;
 import javax.persistence.*;
 import java.util.Date;
 
+// When you see all the created post in "Posts" page, you can see the post, date, and who wrote the post.
 @Entity
 @Table(name = "posts")
 public class Post {

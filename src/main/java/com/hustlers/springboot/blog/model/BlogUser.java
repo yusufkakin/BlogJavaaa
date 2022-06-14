@@ -5,6 +5,8 @@ import com.hustlers.springboot.blog.validation.FieldMatch;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+// Prints message during registration if password doesnt match, password is missing
+// or if the username and full name is missing.
 @FieldMatch.List({
         @FieldMatch(first = "password", second = "matchingPassword", message = "The password fields must match")
 })
