@@ -11,7 +11,7 @@
             <h2 class="title" th:text="${post.title}"> Post Title</h2>
             <div class="date">
                 <i>Posted on</i>
-                <span th:text="${#dates.format(post.date, 'dd-MMM-yyy')}">19-August-2019</span>
+                <span th:text="${#dates.format(post.date, 'dd-MMM-yyy')}"></span>
                 <span th:if="${post.author}" th:remove="tag">
                 <i>by</i>
                 <span th:text="${(post.author.fullName) != null?

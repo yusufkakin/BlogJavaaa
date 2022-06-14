@@ -54,28 +54,28 @@ body>header>a>img, body>header a {
 /*    clear: both;*/
 /*}*/
 
-/*ul#messages li {*/
-/*    display: block;*/
-/*    width: 80%;*/
-/*    margin: 5px auto;*/
-/*    text-align: center;*/
-/*    padding: 5px;*/
-/*    border-radius: 5px;*/
-/*}*/
+ul#messages li {
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-/*ul#messages li.info {*/
-/*    background: #7f7;*/
-/*}*/
+ul#messages li.info {
+    background: #7f7;
+}
 
-/*ul#messages li.error {*/
-/*    background: #d00;*/
-/*    color: white;*/
-/*}*/
+ul#messages li.error {
+    background: #d00;
+    color: white;
+}
 
-/*.formError {*/
-/*    color: red;*/
-/*    font-style: italic;*/
-/*}*/
+.formError {
+    color: red;
+    font-style: italic;
+}
 
 /*.home{*/
 /*    color:#D91A5F;*/
@@ -94,10 +94,10 @@ body>header>a>img, body>header a {
 /*    margin-top: 30px;*/
 /*}*/
 
-/*.create-post{*/
-/*    color:#D91A5F;*/
-/*    margin-top: 30px;*/
-/*}*/
+.create-post{
+    color:#D91A5F;
+    margin-top: 30px;
+}
 
 /*.users{*/
 /*    color:#D91A5F;*/

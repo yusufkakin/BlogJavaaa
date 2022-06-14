@@ -7,31 +7,30 @@
 <header th:replace="layout::site-header"/>
 
 <main id="posts">
-    <!--Add a button-->
+
     <table style="margin-top: 80px" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr style="text-align: center">
             <th style="background: #3A1027; color: white">Title</th>
             <th style="background: #3A1027; color: white">Content</th>
             <th style="background: #3A1027; color: white">Date Posted</th>
-            <div sec:authorize="hasAnyRole('ROLE_ADMIN,ROLE_MANAGER')"> <!--hasAnyRole or hasAnyAuthority-->
-                <!--This content is only shown to administrators.-->
+            <div sec:authorize="hasAnyRole('ROLE_ADMIN,ROLE_MANAGER')">
+
                 <th>Action</th>
             </div>
 
         </tr>
         </thead>
-        <!--tempEmployee >loop parameter, employees> model attribute-->
+
         <tbody class="posts-page" style="text-align: center">
         <tr th:each="tempPost : ${posts}">
             <td th:text="${tempPost.title}"></td>
             <td th:text="${tempPost.body}"></td>
             <td th:text="${#dates.format(tempPost.date, 'dd-MMM-yyy')}"></td>
 
-            <!-- Add "update" button link-->
-            <!--<div sec:authorize="hasRole('ROLE_ADMIN')"> -->
+
                 <td>
-                    <!--This content is only shown to administrators and managers.-->
+
                     <div sec:authorize="hasAnyAuthority('ROLE_ADMIN, ROLE_MANAGER')">
                         <a class="btn btn-info btn-sm"
                            style="margin-right: 15px" th:href="@{/posts/showFormForUpdate(postId=${tempPost.id})}">
@@ -39,9 +38,8 @@
                         </a>
                     </div>
 
-                    <!-- Add "delete" button link-->
-                    <!--This content is only shown to administrators-->
-                    <div sec:authorize="hasAuthority('ROLE_ADMIN')"> <!--hasRole or hasAuthority-->
+
+                    <div sec:authorize="hasAuthority('ROLE_ADMIN')">
                         <a class="btn btn-danger btn-sm"
                            onclick="if (!(confirm('Are you sure you want to delete this post?'))) return false"
                            th:href="@{/posts/delete(postId=${tempPost.id})}">
@@ -49,7 +47,7 @@
                         </a>
                     </div>
                 </td>
-            <!--</div> -->
+
 
         </tr>
         </tbody>
