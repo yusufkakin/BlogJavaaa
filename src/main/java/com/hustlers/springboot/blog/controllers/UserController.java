@@ -59,7 +59,7 @@ public class UserController {
     @GetMapping("/users/delete")
     public String showFormForDelete(@RequestParam("userId") Long theId){
         userService.deleteById(theId);
-        // redirect to /employee/list
+
         return "redirect:/users";
     }
 }
