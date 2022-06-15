@@ -5,6 +5,7 @@ import org.springframework.beans.BeanWrapperImpl;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+// Makes sure the password matches when you register your account
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 	
 	private String firstFieldName;
