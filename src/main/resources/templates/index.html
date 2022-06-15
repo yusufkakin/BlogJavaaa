@@ -9,9 +9,7 @@
     <div class="p-5 mb-5" style="background-color: #3A1027;"></div>
     <div class="d-flex justify-content-around">
 <span class = "d-flex justify-content-around"></span>
-        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt risus mauris, in rhoncus libero consequat quis. Quisque ac nisi ut neque hendrerit consequat non a nulla. Nullam dapibus dolor quis ante tempus, vitae elementum nulla faucibus. Integer ultrices efficitur purus et eleifend. Mauris pretium euismod libero, sed vehicula lorem auctor maximus. Vestibulum pretium eu nisl vitae sodales. Integer aliquam dignissim mattis. Aliquam turpis tellus, sagittis nec finibus non, finibus vel ligula. Proin ultricies enim non dui dapibus porta. Mauris eu massa mollis orci placerat scelerisque vel non eros. Nullam a vehicula justo.
-
-Vestibulum nec vulputate diam. Maecenas dapibus pretium arcu, eu varius odio consectetur et. Ut ornare nibh ac odio sollicitudin sollicitudin. Vestibulum maximus justo eget diam vehicula eleifend. Suspendisse hendrerit dui risus, a consequat mauris scelerisque id. Sed egestas metus et semper ultricies. Suspendisse porta metus sit amet libero egestas sodales..</h4></span>
+        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Welcome to the CFH blog site! Please log in to see more.</h4></span>
         <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px">
             <h3 style="color: #3A1027">Recent Posts</h3>
             <a class="text-dark display-4" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
