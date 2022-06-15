@@ -6,16 +6,17 @@
 </head>
 <body>
     <header th:replace="layout::site-header"/>
-    <div class="p-5 mb-5" style="background-color: #3A1027;"></div>
+    <div class="mb-5" style="background-color: #3A1027; height: 100px"></div>
+    <img class="mx-auto d-block" src="../public/img/cfhlogoonly.png" style="height: 100px" th:src="@{/img/cfhlogoonly.png}">
     <div class="d-flex justify-content-around">
 <span class = "d-flex justify-content-around"></span>
-        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Welcome to the CFH blog site! Please log in to see more.</h4></span>
+        <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Welcome to the CFH blog site! Startups, Banks, Insurance companies, or enterprising individuals are all welcome to join the Carolina Fintech Community. We’re adding new people every week from around the world so reach out, come to an event, or move your company here – it’s the best decision you can make for your growth. You can use this blog website to share your opinion on our future projects that you are planning to take part. Please log in to see more!</h4></span>
         <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px">
             <h3 style="color: #3A1027">Recent Posts</h3>
             <a class="text-dark display-4" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}">
         </a></span>
     </div>
-    <div class="d-flex justify-content-around flex-row pt-5 w-75">
+    <div class="d-flex justify-content-around flex-row w-75">
         <div class="d-flex justify-content-around flex-row w-25"></div>
         <div class="d-flex justify-content-around flex-column">
             <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}" style="width: 800px">
@@ -42,7 +43,7 @@
 <footer class="bg-light text-light text-center text-lg-start">
     <div class="text-center p-4 mt-3" style="background-color: #3A1027">
         © 2022 Hustlers Blog:
-        <a class = "text-light" href="https://blogctac.heroku.com">CFH</a>
+        <a class = "text-light" href="https://blogctac.herokuapp.com">CFH</a>
     </div>
 
 </footer>
