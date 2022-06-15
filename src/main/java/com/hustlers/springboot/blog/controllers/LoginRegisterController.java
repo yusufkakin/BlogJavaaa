@@ -32,7 +32,7 @@ public class LoginRegisterController {
         this.notifyService = theNotifyService;
     }
 
-    @GetMapping("/showMyLoginPage")
+    @GetMapping("/loginForm")
     public String Login(LoginForm loginForm) {
         return "users/login";
     }
@@ -90,7 +90,7 @@ public class LoginRegisterController {
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/showMyLoginPage?logout";
+        return "redirect:/loginForm?logout";
     }
 
 }
