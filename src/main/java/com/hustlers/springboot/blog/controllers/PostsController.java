@@ -43,10 +43,10 @@ public class PostsController {
     //    Will show all post once user clicks on "Posts" page.
     @GetMapping("/posts")
     public String listUserPosts(Model theModel){
-        //get posts from database
+
         Set<Post> posts = postService.findAll();
 
-        // add to the spring model
+
         theModel.addAttribute("posts", posts);
 
         return "posts/index";
