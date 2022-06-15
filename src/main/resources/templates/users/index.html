@@ -7,40 +7,19 @@
 <header th:replace="layout::site-header"/>
 
 <main id="posts">
-    <!--Add a button-->
     <table style="margin-top: 80px" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr style="text-align: center">
-            <th style="background: #3A1027;color: white">User Id</th>
+            <th style="background: #3A1027;color: white">User ID</th>
             <th style="background: #3A1027;color: white">Username</th>
             <th style="background: #3A1027;color: white">Full Name Registered</th>
-            <div sec:authorize="hasAuthority('ROLE_ADMIN')">
-                <th>Action</th>
-            </div>
         </tr>
         </thead>
         <tbody style="text-align: center">
-
-
         <tr th:each="user : ${users}">
             <td th:text="${user.id}"></td>
             <td th:text="${user.username}"></td>
             <td th:text="${user.fullName}"></td>
-
-            <td>
-                <div sec:authorize="hasAuthority('ROLE_ADMIN')">
-
-                    <a class="btn btn-danger btn-sm"
-                       onclick="if (!(confirm('Are you sure you want to delete User?'))) return false"
-                       th:href="@{/users/delete(userId=${user.id})}">
-                        Delete
-                    </a>
-                    <a class="btn btn-info btn-sm"
-                       style="margin-right: 15px" th:href="@{/Admin/change(userId=${user.id})}">
-                        Change Rights
-                    </a>
-                </div>
-            </td>
         </tr>
         </tbody>
 
