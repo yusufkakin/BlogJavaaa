@@ -20,11 +20,11 @@ public class LoginForm {
         this.password = password;
     }
 
-    //   This tells the user that their username must be greater than 2 letters.
-    @Size(min = 2, max = 30, message = "Username size should be in range [2...30]")
+    //   This tells the user that their username shoud be at least 4 letters and password is at least 8 characters.
+    @Size(min = 4, max = 30, message = "Username size should be 4 to 30 characters")
     private String username;
 
     @NotNull
-    @Size(min = 1, max = 50, message = "Username size should be in range [2...30]")
+    @Size(min = 8, max = 50, message = "Username size should be 8 to 50 characters")
     private String password;
 }
