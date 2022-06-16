@@ -10,15 +10,12 @@ body>header>a>img, body>header a {
     font-size: 1.2em;
 }
 
-
-/*body>footer {*/
-/*    background: #eee;*/
-/*    padding: 5px;*/
-/*    margin: 10px 0;*/
-/*    text-align: center;*/
-/*    margin-top: 50px;*/
-/*    color: #F47A37;*/
-/*}*/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
 
 #logged-in-info {
     float: right;
@@ -29,30 +26,6 @@ body>header>a>img, body>header a {
     display: inline-block;
     margin-right: 10px;
 }
-/*body>aside {*/
-/*    float: right;*/
-/*    width: 200px;*/
-/*    background: #CCC;*/
-/*    padding: 15px;*/
-/*    margin-left: 20px;*/
-/*    margin-top: 10px;*/
-/*}*/
-
-/*body>aside h2 {*/
-/*    margin: 5px 0px 15px 0px;*/
-/*}*/
-
-/*body>aside a {*/
-/*    display: block;*/
-/*    margin: 5px 0px;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*body>main:after {*/
-/*    content: '';*/
-/*    display: block;*/
-/*    clear: both;*/
-/*}*/
 
 ul#messages li {
     display: block;
@@ -77,41 +50,17 @@ ul#messages li.error {
     font-style: italic;
 }
 
-/*.home{*/
-/*    color:#D91A5F;*/
-/*    margin-top: 30px;*/
 
-/*}*/
-
-.savebtn{ /* added new class savebtn in html */
+.savebtn{
     background:#FEBF10;
     padding-left: 10px;
     padding-right: 10px;
     border-color: #FEBF10;
 }
-/*.posts{*/
-/*    color:#D91A5F;*/
-/*    margin-top: 30px;*/
-/*}*/
 
 .create-post{
     color:#D91A5F;
     margin-top: 30px;
 }
 
-/*.users{*/
-/*    color:#D91A5F;*/
-/*    margin-top: 30px;*/
-/*}*/
-
-/*.user-posts{*/
-/*    color:#D91A5F;*/
-/*    margin-top: 30px;*/
-/*}*/
-
-/*.btn btn-info btn-sm{*/
-/*    background: #FEBF10;*/
-/*    color: #3A1027;*/
-/*    border-color:#FEBF10;*/
-/*}*/
 
