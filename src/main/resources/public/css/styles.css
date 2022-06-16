@@ -1,3 +1,8 @@
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
 body>header {
     background-image: linear-gradient(to right, #FEBF10 , #D91A5F);
     padding: 5px;
@@ -8,6 +13,15 @@ body>header>a>img, body>header a {
     vertical-align: middle;
     padding-right: 20px;
     font-size: 1.2em;
+}
+
+#page-container {
+    position: relative;
+    /*min-height: 100vh;*/
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
 }
 
 footer {
