@@ -49,7 +49,7 @@ public class BlogUser {
 
 //    Error message will pop us stating that the Full Name, Username, and Password must be a certain length
     @NotNull(message = "is required")
-    @Size(min = 4, max = 30, message = "Username size should be in range [4...30]")
+    @Size(min = 4, max = 30, message = "Username should be at least 4 characters")
     private String username;
 
     @NotNull(message = "is required")
@@ -61,7 +61,7 @@ public class BlogUser {
     private String matchingPassword;
 
     @NotNull(message = "is required")
-    @Size(min = 4, max = 50, message = "Full Name size should be in range [4...50]")
+    @Size(min = 4, max = 50, message = "Full Name size should be at least 4 characters")
     private String fullName;
 
 
