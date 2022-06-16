@@ -48,7 +48,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @AllArgsConstructor @Getter
-    public class NotificationMessage{
+    public static class NotificationMessage{
         NotificationMessageType type;
         String text;
     }
