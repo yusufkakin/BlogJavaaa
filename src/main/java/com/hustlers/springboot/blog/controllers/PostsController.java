@@ -77,7 +77,7 @@ public class PostsController {
 
         post.setAuthor(user);
         postService.create_edit(post);
-        notifyService.addInfoMessage("Post created successfully");
+        notifyService.addInfoMessage("Post created successfully!");
         return "redirect:/posts";
     }
 
@@ -87,7 +87,7 @@ public class PostsController {
 
         postService.deleteById(theId);
 
-        redirectAttributes.addFlashAttribute("message", "deleted successfully");
+        redirectAttributes.addFlashAttribute("message", "Post deleted successfully!");
 
         return "redirect:/users/post";
     }
