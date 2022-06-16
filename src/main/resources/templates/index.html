@@ -11,13 +11,12 @@
     <div class="d-flex justify-content-around">
 <span class = "d-flex justify-content-around"></span>
         <span class = "d-flex justify-content-around mt-5 ml-5 w-50" style="color: #3A1027"><h4> Welcome to the CFH blog site! Startups, Banks, Insurance companies, or enterprising individuals are all welcome to join the Carolina Fintech Community. We’re adding new people every week from around the world so reach out, come to an event, or move your company here – it’s the best decision you can make for your growth. You can use this blog website to share your opinion on our future projects that you are planning to take part. Please log in to see more!</h4></span>
-        <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px">
+        <span class = "d-flex border flex-column text-center w-25 p-3 mt-5" style=" width: 150px; background-color: #3A1027">
             <h3 style="color: #FEBF10; background-color: #3A1027">Recent Posts</h3>
             <a class="h4" th:each="p:${latest5Posts}" th:text="${p.title}" th:href="@{/posts/view/{id}/(id=${p.id})}" style="color: #F47A37">
-
         </a></span>
     </div>
-    <div class="d-flex justify-content-around flex-row w-75">
+    <div class="d-flex justify-content-around flex-row w-75" style="padding-top: 40px">
         <div class="d-flex justify-content-around flex-row w-25"></div>
         <div class="d-flex justify-content-around flex-column">
             <div class="d-flex justify-content-around border flex-column" th:each="p: ${latest5Posts}" style="width: 800px">
